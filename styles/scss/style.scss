@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(169,167,198);
+    background: linear-gradient(90deg, rgba(169,167,198,1) 0%, rgba(179,179,220,1) 49%, rgba(127,179,189,1) 100%);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#car_on_lifter{
+    animation-name: lift;
+    animation-timing-function: linear;
+    animation-duration: 5s;
+    animation-delay: 8s;
+
+    @keyframes lift {
+        0% {
+            transform: translateY(0);
+        }
+    
+        100% {
+            transform: translateY(253px);
+        }
+    }
+}
+
+#right_headlight,
+#left_headlight {
+    animation-name: flashes;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+
+    @keyframes flashes {
+        from {
+            fill: rgb(255, 255, 255);
+        }
+        50% {
+            fill: rgb(235, 235, 125);
+        }
+    
+        to {
+            fill: rgb(255, 255, 255);
+        }
+    }
+}
+
+#person {
+        animation-name: move-back;
+        animation-iteration-count: 1;
+        animation-duration: 4s;
+        animation-delay: 4s;
+        animation-timing-function: linear;
+
+        @keyframes move-back {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(150px);
+            }
+        }
+
+        
+
+    #head {
+        animation-name: head-up;
+        transform-origin: center;
+        animation-timing-function: cubic-bezier(.24,1.23,.72,.85);
+        animation-duration: 7.5s;
+        animation-iteration-count: 1;
+        
+        @keyframes head-up{
+            from {
+                transform: none;
+            }
+
+            35% {
+                transform: rotateZ(35deg) translate(-18px, -22px);
+            }
+            to {
+                transform: none;
+            }
+        }
+    }
+
+    #left_hand {
+        transform-origin: center;
+        animation-name: up-left-hand;
+        animation-timing-function: cubic-bezier(.35,.85,.8,.81);
+        animation-iteration-count: 1;
+        animation-duration: 4s;
+
+        @keyframes up-left-hand {
+            from {
+                transform: none;
+            }
+            30% {
+                transform: rotateZ(90deg) translate(-71px, -54px);
+            }
+            70% {
+                transform: rotateZ(90deg) translate(-71px, -54px);
+            }
+            to {
+                transform: none;
+            }
+        }
+
+        #wrench {
+            transform-origin: center;
+            animation-name: rotate-wrench;
+            animation-duration: 1s; 
+            animation-timing-function: cubic-bezier(.38,.63,.72,.85);
+            animation-iteration-count: 1;
+            transform: rotateZ(-45deg) translate(-31px, 0);
+            
+
+            @keyframes rotate-wrench {
+                from {
+                    transform: none;
+                }
+                to {
+                    transform: rotateZ(-45deg) translate(-31px, 0);
+                }
+            }
+        }
+    }
+
+    #right_hand {
+        transform-origin: center;
+        animation-name: down-right-hand;
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(.74,.27,.8,.81);
+        animation-iteration-count: 1;
+        transform: rotateZ(-56deg) translate(-17px, 62px);
+
+        @keyframes down-right-hand {
+            from {
+                transform: none;
+            }
+            to {
+                transform: rotateZ(-56deg) translate(-17px, 62px);
+            }
+        }
+    }
+
+    #right_leg {
+        transform-origin: center;
+        animation-name: step-right-leg;
+        animation-timing-function: linear;
+        animation-iteration-count: 2;
+        animation-duration: 2s;
+        animation-delay: 4s;
+        
+
+        @keyframes step-right-leg {
+            from {
+                transform: none;
+            }
+            20% {
+                transform: rotateZ(13deg) translate(11px, -10px);
+            }
+            66% {
+                transform: rotateZ(-15deg) translate(-18px, 10px);
+            }
+            100%{
+                transform: none;
+            }
+        }
+    }
+
+    #left_leg {
+        transform-origin: center;
+        animation-name: step-left-leg;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+        animation-duration: 2s;
+        animation-delay: 4s;
+
+        @keyframes step-left-leg {
+            from {
+                transform: none;
+            }
+            20% {
+                transform: rotateZ(-13deg) translate(-24px, 10px);
+            }
+            66% {
+                transform: rotateZ(13deg) translate(-24px, -15px);
+            }
+            100%{
+                transform: none;
+            }
+        }
+    }
+}
+
